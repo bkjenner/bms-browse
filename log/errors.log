@@ -1,0 +1,4 @@
+[2023-10-03 15:43:11] [31merror[39m: 2XXo5 1016988 POST [33m400[0m /graphql 6.372 ms
+[2023-10-03 15:43:11] [31merror[39m: Error writing request file for request 2XXo5
+[2023-10-04 09:41:15] [31merror[39m: AVqK9 1016988 POST [33m400[0m /graphql 5.554 ms
+[2023-10-04 09:41:15] [31merror[39m: Error writing request file for request AVqK9

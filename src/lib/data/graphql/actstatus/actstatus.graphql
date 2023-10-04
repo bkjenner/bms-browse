@@ -1,0 +1,10 @@
+type ActStatus {
+    id: Float
+    description: String
+    displaysequence: Int
+    shortcode: String
+    rowstatus: String
+    syschangehistoryid: Float
+
+    view: String
+}

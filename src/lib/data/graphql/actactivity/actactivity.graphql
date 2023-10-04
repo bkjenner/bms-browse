@@ -1,0 +1,31 @@
+type ActActivity {
+    id: ID!
+    actpriorityid: Float
+    actprojectid: Float
+    actstatusid: Float
+    acttypeid: Float
+    comments: String
+    completiondate: Date
+    description: String
+    rowidperformedby: Contact
+    rowidperformedfor: Contact
+    rowstatus: String
+    startdate: Date
+    syschangehistoryid: Float
+    sysdictionarytableidperformedby: Float
+    sysdictionarytableidperformedfor: Float
+    totalactual: Float
+
+    actpriority: ActPriority
+    actstatus: ActStatus
+    acttype: ActType
+    actproject: ActProject
+}
+
+input ActActivityFilter {
+    description: String
+}
+
+type Query {
+    actactivities(filter: ActActivityFilter, limit: Int): [ActActivity]
+}
