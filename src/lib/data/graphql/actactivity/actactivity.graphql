@@ -20,10 +20,14 @@ type ActActivity {
     actstatus: ActStatus
     acttype: ActType
     actproject: ActProject
+    performedby: CRMContact
+    performedfor: CRMContact
 }
 
 input ActActivityFilter {
     description: String
+    rowidperformedby: Float
+    rowidperformedfor: Float
 }
 
 type Query {
@@ -33,6 +37,8 @@ type Query {
         acttype: ActTypeFilter
         actstatus: ActStatusFilter
         actproject: ActProjectFilter
+        performedby: CRMContactFilter,
+        performedfor: CRMContactFilter,
         limit: Int
     ): [ActActivity]
 }

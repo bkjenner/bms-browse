@@ -113,4 +113,6 @@ actactivity.associate = function (db) {
     db.models.actactivity.belongsTo(db.models.actstatus, { as: "actstatus", foreignKey: "actstatusid" });
     db.models.actactivity.belongsTo(db.models.acttype, { as: "acttype", foreignKey: "acttypeid" });
     db.models.actactivity.hasOne(db.models.actactivitysubtypebilling, { as: "actactivitysubtypebilling", foreignKey: "actactivityid" });
+    db.models.actactivity.belongsTo(db.models.crmcontact, { as: "performedby", foreignKey: "rowidperformedby" });
+    db.models.actactivity.belongsTo(db.models.crmcontact, { as: "performedfor", foreignKey: "rowidperformedfor" });
 };

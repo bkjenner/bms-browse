@@ -6,6 +6,8 @@ module.exports = {
             let typeQuery = { required: false };
             let statusQuery = { required: false };
             let projectQuery = { required: false };
+            let byQuery = { required: false };
+            let forQuery = { required: false };
 
             if (args) {
                 query = context.constructQuery(args.filter);
@@ -29,6 +31,16 @@ module.exports = {
                     projectQuery.where = context.constructQuery(args.actproject);
                     projectQuery.required = true;
                 }
+
+                if (args.performedby) {
+                    byQuery.where = context.constructQuery(args.performedby);
+                    byQuery.required = true;
+                }
+
+                if (args.performedfor) {
+                    forQuery.where = context.constructQuery(args.performedfor);
+                    forQuery.required = true;
+                }
             }
 
             return context.models.actactivity.findAll({
@@ -39,6 +51,8 @@ module.exports = {
                     { model: context.models.actstatus, as: "actstatus", ...statusQuery },
                     { model: context.models.acttype, as: "acttype", ...typeQuery },
                     { model: context.models.actproject, as: "actproject", ...projectQuery },
+                    { model: context.models.crmcontact, as: "performedby", ...byQuery },
+                    { model: context.models.crmcontact, as: "performedfor", ...forQuery },
                 ],
             });
         },
