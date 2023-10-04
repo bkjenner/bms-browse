@@ -7,3 +7,12 @@ type ActPriority {
     syschangehistoryid: Float
     view: String
 }
+
+input ActPriorityFilter {
+    id: Float
+    description: String
+}
+
+type Query {
+    actpriorities(filter: ActPriorityFilter): [ActPriority]
+}

@@ -27,5 +27,12 @@ input ActActivityFilter {
 }
 
 type Query {
-    actactivities(filter: ActActivityFilter, limit: Int): [ActActivity]
+    actactivities(
+        filter: ActActivityFilter
+        actpriority: ActPriorityFilter
+        acttype: ActTypeFilter
+        actstatus: ActStatusFilter
+        actproject: ActProjectFilter
+        limit: Int
+    ): [ActActivity]
 }

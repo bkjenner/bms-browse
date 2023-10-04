@@ -20,3 +20,7 @@ type ActProject {
 
     view: String
 }
+
+input ActProjectFilter {
+    description: String
+}

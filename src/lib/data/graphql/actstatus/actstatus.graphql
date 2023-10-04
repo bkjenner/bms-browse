@@ -8,3 +8,7 @@ type ActStatus {
 
     view: String
 }
+
+input ActStatusFilter {
+    description: String
+}

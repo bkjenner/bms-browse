@@ -16,3 +16,7 @@ type ActType {
 
     view: String
 }
+
+input ActTypeFilter {
+    description: String
+}
